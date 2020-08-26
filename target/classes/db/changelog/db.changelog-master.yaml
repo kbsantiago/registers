@@ -1,0 +1,137 @@
+databaseChangeLog:
+  -  preConditions:
+  -  runningAs:
+       username:  liquibase
+
+  - changeSet:
+      id:  create-table-person_1.0.0
+      author:  kleyson
+      changes:
+        - createTable:
+            tableName:  person
+            columns:
+              - column:
+                  name:  id
+                  type:  BIGINT
+                  autoIncrement:  true
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name:  name
+                  type:  VARCHAR(100)
+                  constraints:
+                    - nullable:  false
+              - column:
+                  name:  document
+                  type:  VARCHAR(14)
+                  constraints:
+                    - nullable:  false
+              - column:
+                  name:  email
+                  type:  VARCHAR(100)
+                constraints:
+                  - nullable:  true
+              - column:
+                  name:  birthdate
+                  type:  TIMESTAMP
+                  constraints:
+                    - nullable:  false
+              - column:
+                  name:  birthplace
+                  type:  VARCHAR(60)
+                  constraints:
+                    - nullable:  true
+              - column:
+                  name:  nationality
+                  type:  VARCHAR(60)
+                  constraints:
+                    - nullable:  true
+              - column:
+                  name:  sex
+                  type:  CHAR
+                  constraints:
+                    - nullable:  true
+              - column:
+                  name:  created_date
+                  type:  TIMESTAMP
+                  constraints:
+                    - nullable:  false
+              - column:
+                  name:  updated_date
+                  type:  TIMESTAMP
+                  constraints:
+                    - nullable:  false
+
+  - changeSet:
+      id:  create-table-address_1.0.2
+      author:  kleyson
+      changes:
+        - createTable:
+            tableName:  address
+            columns:
+              - column:
+                  name:  id
+                  type:  BIGINT
+                  autoIncrement:  true
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name:  street
+                  type:  VARCHAR(60)
+                  constraints:
+                    - nullable:  false
+              - column:
+                  name:  number
+                  type:  INTEGER
+                  constraints:
+                    - nullable:  false
+              - column:
+                  name:  complement
+                  type:  VARCHAR(50)
+                constraints:
+                  - nullable:  true
+              - column:
+                  name:  reference
+                  type:  VARCHAR(100)
+                  constraints:
+                    - nullable:  true
+              - column:
+                  name:  neighborhood
+                  type:  VARCHAR(60)
+                  constraints:
+                    - nullable:  false
+              - column:
+                  name:  city
+                  type:  VARCHAR(60)
+                  constraints:
+                    - nullable:  false
+              - column:
+                  name:  state
+                  type:  VARCHAR(60)
+                  constraints:
+                    - nullable:  false
+              - column:
+                  name:  created_date
+                  type:  TIMESTAMP
+                  constraints:
+                    - nullable:  false
+              - column:
+                  name:  updated_date
+                  type:  TIMESTAMP
+                  constraints:
+                    - nullable:  false
+
+  - changeSet:
+      id: addColumn-example
+      author: liquibase-docs
+      changes:
+        - addColumn:
+            tableName:  person
+            columns:
+              - column:
+                  name:  address
+                  type:  BIGINT
+                  constraints:
+                    - nullable:  true

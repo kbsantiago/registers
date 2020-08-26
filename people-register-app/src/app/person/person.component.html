@@ -1,0 +1,50 @@
+<br>
+<br>
+<div>
+  <div>
+  <h1>
+    <b>People list</b>
+  </h1>
+  </div>
+  <div style="float: right">
+    <button class="btn btn-success" (click)="addPerson()">Add new person</button>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<div style="float: bottom">
+  <table class="table">
+    <thead></thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Document</th>
+      <th scope="col">Email</th>
+      <th scope="col">Birthdate</th>
+      <th scope="col">Birthplace</th>
+      <th scope="col">Nationality</th>
+      <th scope="col">Sex</th>
+      <th scope="col">Actions</th>
+    </tr>
+
+    <tbody>
+    <tr scope="row" *ngFor="let person of people">
+      <td>{{person.id}}</td>
+      <td>{{person.name}}</td>
+      <td>{{person.document.code}}</td>
+      <td>{{person.email.address}}</td>
+      <td>{{person.birthDate}}</td>
+      <td>{{person.nationality}}</td>
+      <td>{{person.nationality}}</td>
+      <td>{{person.sex}}</td>
+      <td><button (click)="deletePerson(person.id)" class="btn btn-danger">Delete</button>
+        <button (click)="updatePerson(person.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+

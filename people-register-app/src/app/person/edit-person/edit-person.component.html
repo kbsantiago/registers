@@ -1,0 +1,42 @@
+<br>
+<br>
+<div class="col-md-12">
+  <h2 class="text-center">Add Person</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="name" [(ngModel)]="person.name" placeholder="Name" name="name" class="form-control" id="name" maxlength="100">
+    </div>
+
+    <div class="form-group">
+      <label for="document">Document number:</label>
+      <input [(ngModel)]="person.document.code" placeholder="Document number(. and - is unnecessary)" name="document" class="form-control" id="document" maxlength="11">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address: </label>
+      <input [(ngModel)]="person.email.address" placeholder="Email address" name="email" class="form-control" id="email" maxlength="100">
+    </div>
+
+    <div class="form-group">
+      <label for="birthdate">Date of birth: </label>
+      <input [(ngModel)]="person.birthDate" placeholder="date of birth (format: dd/MM/yyyy)" name="birthdate" class="form-control" id="birthdate" maxlength="10">
+    </div>
+    <div class="form-group">
+      <label for="birthPlace">Birth place: </label>
+      <input [(ngModel)]="person.birthPlace" placeholder="name of birth place" name="birthPlace" class="form-control" id="birthPlace" maxlength="60">
+    </div>
+    <div class="form-group">
+      <label for="nationality">Country of origin: </label>
+      <input [(ngModel)]="person.nationality" placeholder="name of country" name="nationality" class="form-control" id="nationality" maxlength="60">
+    </div>
+    <div class="form-group">
+      <label for="sex">Sex: </label>
+      <input [(ngModel)]="person.sex" placeholder="M(Male) or F(Female)" name="sex" class="form-control" id="sex" maxlength="1">
+    </div>
+    <div>
+      <button type="submit" class="btn btn-success">Submit</button>
+      <button class="btn btn-light" style="margin-left: 5px" (click)="backToList()">Back</button>
+    </div>
+  </form>
+</div>
